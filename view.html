@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <header>
+    <!-- Add the navigation bar -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="add.html">Add New Student</a>
+        <a href="view.html">View All Students</a>
+        <a href="view-active.html">View Active Students</a>
+        <a href="#">About</a>
+    </nav> 
+    </header>
+    <br>
+    <!-- Add the search bar -->
+	<form action="#" method="get">
+		<label for="search">Search:</label>
+		<input type="text" id="search" name="search">
+		<input type="submit" value="Search">
+	</form>
+    <br>
+    <table border="1" style="text-align: center;">
+		<thead>
+			<tr>
+                <th>ID</th>
+				<th>Name</th>
+                <th>GPA</th>
+				<th>Department</th>
+                <th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+                <td>20210227</td>
+				<td>abdelrahman atef</td>	
+                <td>3.62</td>
+				<td>cs</td>
+                <td><button id="statusBtn">Active</button></td>
+			</tr>
+            <tr>
+                <td>2021008</td>
+				<td>yassin</td>
+                <td>3.61</td>
+				<td>cs</td>
+                <td><button id="statusBtn">Active</button></td>
+			</tr>
+            <tr>
+                <td>20210229</td>
+				<td>abdelrahman adel</td>
+                <td>3.64</td>
+				<td>it</td>
+                <td><button id="statusBtn">Active</button></td>
+			</tr>
+        </tbody>
+	</table>
+    <main>
+		<h2>About Us</h2>
+		<p>We are a world-class university dedicated to providing an exceptional education to our students.</p>
+	</main>
+	
+	<footer>
+		<address>
+            Contact Us:<br>
+            123 Main Street<br>
+            Anytown, USA 12345<br>
+            Phone: 555-1234<br>
+            Email: info@exampleuniversity.edu<br>
+        </address>
+	</footer>
+    
+</body>
+</html>
