@@ -1,13 +1,24 @@
-<a href = "home.html">Home</a>
-<a href = "add.html">Add New Students</a>
-<a href = "view.html">View All Students</a>
-<a href = "view-active.html">View Active Students</a>
-<a href = "about.html">About</a>
-<hr>
-<div style="border: 1px solid black;">
-    <h2>Add New Student</h2>
-    <form action="home.html" method="post">
-        <p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add a New Student</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="add.html">Add New Student</a>
+                <a href="view.html">View All Students</a>
+                <a href="view-active.html">View Active Students</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+        <hr>
+        <h2>Add New Student</h2>
+        <form action="home.html" method="post">
             <label for="first_name">First Name:</label><br>
             <input type="text" name="first_name" required ><br><br>  
             <label for="last_name">Last Name:</label><br>
@@ -20,4 +31,22 @@
             <input type="text" name="address" required><br><br>
             <label for="birthday">Birthday:</label><br>
             <input type="text" name="birthday" required><br><br>
-            <button>Submit</button>
+            <input type="submit" value="Add">
+        </form>
+        <hr>
+        <footer>
+            <main>
+                <h2>About Us</h2>
+                <p>We are a world-class university dedicated to providing an exceptional education to our students.</p>
+            </main>
+            <address>
+                Contact Us:<br>
+                123 Main Street<br>
+                Anytown, USA 12345<br>
+                Phone: 555-1234<br>
+                Email: info@exampleuniversity.edu<br>
+            </address>
+        </footer>
+    </body>
+</html>
+
