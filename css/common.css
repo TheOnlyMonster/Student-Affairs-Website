@@ -88,6 +88,29 @@ nav>ul>li:hover{
     grid-template-columns: 1fr auto;
     padding: 15px;
 }
+.search-container input{
+    outline: 0px;
+    border: 0px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.search-container input[type="text"]{
+    padding: 8px;
+    margin-right: 5px;
+    background-color: #EEE;
+    caret-color: var(--footer-color);
+}
+.search-container input[type="submit"]{
+    color: white;
+    background-color: #337ab7;
+    cursor: pointer;
+}
+.table-container{
+    padding: 15px;
+}
 .table-container > thead{
     background-color: #EEE;
 }
@@ -105,6 +128,38 @@ footer{
     color: white;
     background-color: var(--footer-color);
 }
+footer .logo{
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer .logo::before{
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: var(--nav-color);
+    right: 0px;
+}
+footer .logo h1{
+    color: var(--nav-color);
+    margin: 0px;
+    font-size: 70px;
+}
 .footer-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 15px;
     padding: 15px;
+}
+@media (max-width:767px) {
+    footer{
+        text-align: center;
+    }
+    footer .logo::before{
+        display: none;
+    }
 }
