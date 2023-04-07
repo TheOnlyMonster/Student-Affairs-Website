@@ -1,13 +1,9 @@
 .student-details{
     margin: 20vh auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     gap: 10px;
-}
-@media (max-width: 1200px) {
-    .student-details{
-        grid-template-columns: auto;
-    }
+    padding: 30px;
 }
 .student-details > .student-text > div{
     display: flex;
@@ -16,5 +12,10 @@
 }
 .student-details .student-img{
     max-width: 100%;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
