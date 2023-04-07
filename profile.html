@@ -5,19 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Student Profile</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/common.css">
     </head>
     <body>
-        <header>
-            <!-- Add the navigation bar -->
-            <nav>
-                <a href="home.html">Home</a>
-                <a href="add.html">Add New Student</a>
-                <a href="view.html">View All Students</a>
-                <a href="view-active.html">View Active Students</a>
-                <a href="#">About</a>
-            </nav> 
-        </header>
-        <hr>
+        <div class="header-container">
+            <div class="college-img container">X | Universirty of Future</div>
+        </div>
+        <nav>
+            <ul class="container">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="add.html">Add New Student</a></li>
+                <li><a href="view.html">View All Students</a></li>
+                <li><a href="view-active.html">View Active Students</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
         <main>
             <form action="#" target="_blank" >
                 <label for="firstName">First Name:</label>
@@ -50,17 +56,19 @@
         </main>
         <hr>
         <footer>
-            <main>
-                <h2>About Us</h2>
-                <p>We are a world-class university dedicated to providing an exceptional education to our students.</p>
-            </main>
-            <address>
-                Contact Us:<br>
-                123 Main Street<br>
-                Anytown, USA 12345<br>
-                Phone: 555-1234<br>
-                Email: info@exampleuniversity.edu<br>
-            </address>
+            <div class="container footer-container">
+                <main>
+                    <h2>About Us</h2>
+                    <p>We are a world-class university dedicated to providing an exceptional education to our students.</p>
+                </main>
+                <address>
+                    Contact Us:<br>
+                    123 Main Street<br>
+                    Anytown, USA 12345<br>
+                    Phone: 555-1234<br>
+                    Email: info@exampleuniversity.edu<br>
+                </address>
+            </div>
         </footer>
     </body>
 </html>

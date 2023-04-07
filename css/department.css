@@ -1,0 +1,20 @@
+.student-details{
+    margin: 20vh auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+@media (max-width: 1200px) {
+    .student-details{
+        grid-template-columns: auto;
+    }
+}
+.student-details > .student-text > div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.student-details .student-img{
+    max-width: 100%;
+}
+
