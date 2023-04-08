@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/add.css">
     </head>
     <body>
         <div class="header-container">
@@ -24,8 +25,8 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-        <h2>Add New Student</h2>
-        <form action="home.html" method="post">
+        <h2>&nbsp;Add New Student</h2>
+        <form class = "addstd" action="home.html" method="post">
             <label for="first_name">First Name:</label><br>
             <input type="text" name="first_name" required ><br><br>  
             <label for="last_name">Last Name:</label><br>
@@ -38,7 +39,9 @@
             <input type="text" name="address" required><br><br>
             <label for="birthday">Birthday:</label><br>
             <input type="text" name="birthday" required><br><br>
-            <input type="submit" value="Add">
+            <label for="ID">ID:</label><br>
+            <input type="text" name="ID" required><br><br>
+            <input id = "submitstd" type="submit" value="Add">
         </form>
         <hr>
         <footer id="about">
@@ -61,5 +64,10 @@
             </div>
         </footer>
     </body>
+    <script> 
+        Element.addEventListener("click", function() {
+            alert ("Student Has Been Submitted Successfully");
+        })
+    </script>
 </html>
 
