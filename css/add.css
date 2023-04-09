@@ -1,8 +1,27 @@
-.addstd{
-    border: 0.01cm solid rgb(80, 77, 77);
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
+
+.grid-container{
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.item1{
+    grid-column: 1;
+}
+
+.item2{
+    grid-row: 2/3;
+}
+
+.item3{
+    grid-column:3;
+    grid-row: 1/2;
+}
+.item4{
+    grid-column: 3;
+    grid-row: 2/3;
 }
 
 input[type = "submit"]{
@@ -13,3 +32,4 @@ input[type = "submit"]{
     padding: 15px;
     width: 120px;
 }
+
