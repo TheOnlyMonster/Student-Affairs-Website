@@ -1,35 +1,71 @@
-
-.grid-container{
+.add-container{
+    text-align: center;
+    padding: 45px;
+    color: var(--footer-color);
+}
+.grid-container{ 
     display: grid;
     grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-    grid-template-rows: auto auto auto;
     gap: 10px;
-    flex-direction: column;
-    align-items: center;
+    padding: 0px 45px 60px 45px;
+    overflow: visible;
 }
-.item1{
-    grid-column: 1;
+.grid-container::before{
+    position: absolute;
+    content: "";
+    background-image: url("/imgs/college-student1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: -25%;
 }
-
-.item2{
-    grid-row: 2/3;
+.grid-container::after{
+    position: absolute;
+    content: "";
+    background-image: url("/imgs/college-student2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    right: -85%;
 }
-
-.item3{
-    grid-column:3;
-    grid-row: 1/2;
+@media (max-width:992px) {
+    .grid-container::before{
+        display: none;
+    }
+    .grid-container::after{
+        display: none;
+    }   
 }
-.item4{
-    grid-column: 3;
-    grid-row: 2/3;
-}
-
-input[type = "submit"]{
-    background-color: #ffcb05;
-    border: #ffcb05;
-    border-radius: 12px;
-    margin: center;
+.grid-container>div{
     padding: 15px;
-    width: 120px;
+}
+.grid-container input:not([type = "submit"]){
+    width: 100%;
+    padding: 5px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.grid-container input[type = "submit"]{
+    cursor: pointer;
+    background-color: var(--nav-color);
+    border: var(--nav-color);
+    border-radius: 12px;
+    padding: 5px 15px;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+.grid-container input[type = "submit"]:hover{
+    background-color: var(--footer-color);
+    color: white;
 }
 

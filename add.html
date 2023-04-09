@@ -25,38 +25,44 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-        <h2 class="container">Add New Student</h2>
-        <form class = "addstd container grid-container" action="home.html" method="post">
-            <div class="item1">
+        <h1 class="container add-container">Add New Student</h1>
+        <form class = "container grid-container" action="home.html" method="post">
+            <div>
                 <label for="first_name">First Name:</label><br>
-                <input type="text" name="first_name" required ><br><br> 
-                <label for="last_name">Last Name:</label><br>
-                <input type="text" name="last_name" required><br><br>
+                <input type="text" name="first_name" required > 
             </div>
-            <div class="item2">
-                <label for="photo">Enter a Photo:</label><br>
-                <input type="file" name="photo" required><br><br>
+            <div>
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" name="last_name" required>
+            </div>
+            <div>
+                <label for="national_id">National ID:</label><br>
+                <input type="number" name="national_id" required minlength="14" maxlength="14">
             </div>
             <div>
                 <label for="email">Email:</label><br>
-                <input type="text" name="email" required><br><br>
+                <input type="text" name="email" required>
+            </div>
+            <div>
                 <label for="phone">Phone:</label><br>
-                <input type="text" name="phone" required><br><br>
-                <label for="ID">ID:</label><br>
-                <input type="text" name="ID" required><br><br>
-                
+                <input type="number" name="phone" required minlength="11" maxlength="11">
             </div>
-            <div class="item3">
+            <div>
                 <label for="address">Address:</label><br>
-                <input type="text" name="address" required><br><br>
-                <label for="birthday">Birthday:</label><br>
-                <input type="text" name="birthday" required><br><br>
-                <input id = "submitstd" type="submit" value="Add">
+                <input type="text" name="address" required>
             </div>
-
-            
+            <div>
+                <label for="birthday">Birthday:</label><br>
+                <input type="date" name="birthday" required>
+            </div>    
+            <div>
+                <label for="photo">Enter a Photo:</label><br>
+                <input type="file" name="photo" required>
+            </div>
+            <div>
+                <input id = "submitted" type="submit" value="Add">
+            </div>
         </form>
-        <hr>
         <footer id="about">
             <div class="container footer-container">
                 <div class="logo">
