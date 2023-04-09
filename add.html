@@ -25,23 +25,36 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-        <h2>&nbsp;Add New Student</h2>
-        <form class = "addstd" action="home.html" method="post">
-            <label for="first_name">First Name:</label><br>
-            <input type="text" name="first_name" required ><br><br>  
-            <label for="last_name">Last Name:</label><br>
-            <input type="text" name="last_name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="text" name="email" required><br><br>
-            <label for="phone">Phone:</label><br>
-            <input type="text" name="phone" required><br><br>
-            <label for="address">Address:</label><br>
-            <input type="text" name="address" required><br><br>
-            <label for="birthday">Birthday:</label><br>
-            <input type="text" name="birthday" required><br><br>
-            <label for="ID">ID:</label><br>
-            <input type="text" name="ID" required><br><br>
-            <input id = "submitstd" type="submit" value="Add">
+        <h2 class="container">Add New Student</h2>
+        <form class = "addstd container grid-container" action="home.html" method="post">
+            <div class="item1">
+                <label for="first_name">First Name:</label><br>
+                <input type="text" name="first_name" required ><br><br> 
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" name="last_name" required><br><br>
+            </div>
+            <div class="item2">
+                <label for="photo">Enter a Photo:</label><br>
+                <input type="file" name="photo" required><br><br>
+            </div>
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="text" name="email" required><br><br>
+                <label for="phone">Phone:</label><br>
+                <input type="text" name="phone" required><br><br>
+                <label for="ID">ID:</label><br>
+                <input type="text" name="ID" required><br><br>
+                
+            </div>
+            <div class="item3">
+                <label for="address">Address:</label><br>
+                <input type="text" name="address" required><br><br>
+                <label for="birthday">Birthday:</label><br>
+                <input type="text" name="birthday" required><br><br>
+                <input id = "submitstd" type="submit" value="Add">
+            </div>
+
+            
         </form>
         <hr>
         <footer id="about">
@@ -64,10 +77,5 @@
             </div>
         </footer>
     </body>
-    <script> 
-        Element.addEventListener("click", function() {
-            alert ("Student Has Been Submitted Successfully");
-        })
-    </script>
 </html>
 
