@@ -103,10 +103,19 @@ nav>ul>li:hover{
     background-color: #EEE;
     caret-color: var(--footer-color);
 }
-.search-container input[type="submit"]{
-    color: white;
-    background-color: #337ab7;
+.input-submit{
+    color: var(--footer-color);
+    background-color: var(--nav-color);
     cursor: pointer;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+.input-submit:hover{
+    color: white;
+    background-color: var(--footer-color);
 }
 .table-container{
     padding: 15px;
@@ -170,5 +179,5 @@ footer .logo h1{
         width: 70%;
         height: 2px;
         bottom: 0px;
-}
+    }
 }
