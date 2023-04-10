@@ -12,11 +12,11 @@
 .grid-container::before{
     position: absolute;
     content: "";
-    background-image: url("/imgs/college-student1.png");
+    background-image: url(/imgs/college-student1.png);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
-    width: 100%;
+    width: 280px;
     height: 100%;
     left: -25%;
 }
@@ -27,9 +27,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
-    width: 100%;
+    width: 350px;
     height: 100%;
-    right: -85%;
+    right: -25%;
 }
 @media (max-width:992px) {
     .grid-container::before{
