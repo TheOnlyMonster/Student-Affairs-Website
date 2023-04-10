@@ -181,3 +181,17 @@ footer .logo h1{
         bottom: 0px;
     }
 }
+.btn {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: #ccc;
+    border: none;
+    color: #0e0d0d;
+    cursor: pointer;
+}
+.btn:first-child {
+    margin-right: 15px;
+}
+button.active {
+    /*still in progress*/
+}
