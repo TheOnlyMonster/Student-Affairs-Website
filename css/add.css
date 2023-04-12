@@ -19,6 +19,11 @@
     width: 280px;
     height: 100%;
     left: -25%;
+    transform: translateY(20%);
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    -o-transform: translateY(20%);
 }
 .grid-container::after{
     position: absolute;
@@ -30,6 +35,11 @@
     width: 350px;
     height: 100%;
     right: -25%;
+    transform: translateY(20%);
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    -o-transform: translateY(20%);
 }
 @media (max-width:992px) {
     .grid-container::before{
@@ -38,6 +48,15 @@
     .grid-container::after{
         display: none;
     }   
+}
+.grid-container>div>span{
+    display: inline-block;
+    
+    text-align: center;
+}
+.selection-grid-cell{
+    display: flex;
+    justify-content: space-evenly;
 }
 .grid-container>div{
     padding: 15px;
