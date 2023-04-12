@@ -117,6 +117,30 @@ nav>ul>li:hover{
     color: white;
     background-color: var(--footer-color);
 }
+input:not([type = "submit"]),select{
+    width: 100%;
+    padding: 5px;
+    border: 0px;
+    border-bottom: 2px solid var(--nav-color);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+input:not([type = "submit"]):focus,select:focus{
+    border: 0px;
+    border-bottom: 2px solid var(--footer-color);
+    outline: 0px;
+}
+input:disabled{
+    border-bottom: 0px;
+    background-color: #EEE;
+}
+input[type = "submit"]{
+    border-radius: 12px;
+    padding: 5px 15px;
+}
 .table-container{
     padding: 15px;
 }

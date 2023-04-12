@@ -61,18 +61,5 @@
 .grid-container>div{
     padding: 15px;
 }
-.grid-container input:not([type = "submit"]){
-    width: 100%;
-    padding: 5px;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-}
-.grid-container input[type = "submit"]{
-    border-radius: 12px;
-    padding: 5px 15px;
-}
 
 
