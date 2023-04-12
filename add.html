@@ -26,42 +26,42 @@
             </ul>
         </nav>
         <h1 class="container add-container">Add New Student</h1>
-        <form class = "container grid-container" action="home.html" method="post">
+        <form id="submitted" class = "container grid-container" action="home.html" method="get">
             <div>
                 <label for="first_name">First Name:</label><br>
-                <input type="text" id="first_name" required > 
+                <input type="text" id="Fname" required > 
             </div>
             <div>
                 <label for="last_name">Last Name:</label><br>
-                <input type="text" id="last_name" required>
+                <input type="text" id="Lname" required>
             </div>
             <div>
                 <label for="national_id">National ID:</label><br>
-                <input type="number" id="national_id" required minlength="14" maxlength="14">
+                <input type="number" id="Nid" required minlength="14" maxlength="14">
             </div>
             <div>
                 <label for="std_email">Email:</label><br>
-                <input type="email" id="std_email" required>
+                <input type="email" id="Email" required>
             </div>
             <div>
                 <label for="phone">Phone:</label><br>
-                <input type="number" id="phone" required minlength="11" maxlength="11">
+                <input type="number" id="Phone" required minlength="11" maxlength="11">
             </div>
             <div>
                 <label for="address">Address:</label><br>
-                <input type="text" id="address" required>
+                <input type="text" id="Address" required>
             </div>
             <div>
                 <label for="birthday">Birthday:</label><br>
-                <input type="date" id="birthday" required>
+                <input type="date" id="Birthday" required>
             </div>
             <div>
                 <label for="gpa">GPA:</label><br>
-                <input type="number" id="gpa" max="4" required>
+                <input type="number" step="0.01" min="0" id="GPA" max="4" required>
             </div> 
             <div class="selection-grid-cell">
                 <span>
-                    <label for="Level">Level</label><br>
+                    <label for="level">Level</label><br>
                     <select id="Level" required>
                         <option value="first_level">1</option>
                         <option value="second_level">2</option>
@@ -71,14 +71,14 @@
                 </span>
                 <span>
                     <label for="gender">Gender</label><br>
-                    <select id="gender" required>
+                    <select id="Gender" required>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </span>
                 <span>
                     <label for="std_status">Status</label><br>
-                    <select id="std_status" required>
+                    <select id="Status" required>
                         <option value="std_active">Active</option>
                         <option value="std_inactive">Inactive</option>
                     </select>
@@ -86,10 +86,11 @@
             </div>
             <div>
                 <label for="photo">Enter a Photo:</label><br>
-                <input type="file" id="photo" required>
+                <input type="file" id="Img" required>
             </div>
             <div>
-                <input id = "submitted" type="submit" value="Add" class="input-submit">
+                <div id="message"></div>
+                <input type="submit" value="Add" class="input-submit">
             </div>
         </form>
         <footer id="about">
@@ -112,5 +113,5 @@
             </div>
         </footer>
     </body>
+    <script src="js/add.js"></script>
 </html>
-
