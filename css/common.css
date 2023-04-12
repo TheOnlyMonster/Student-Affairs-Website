@@ -184,14 +184,20 @@ footer .logo h1{
 .btn {
     display: inline-block;
     padding: 6px 16px;
-    background-color: #ccc;
+    background-color: #EEE;
     border: none;
+    border-radius: 50px;
     color: #0e0d0d;
     cursor: pointer;
 }
 .btn:first-child {
     margin-right: 15px;
 }
+.btn:hover {
+    background-color: var(--nav-color);
+    color: var(--footer-color);
+}
 button.active {
-    /*still in progress*/
+    background-color: var(--nav-color);
+    color: var(--footer-color);
 }
