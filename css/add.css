@@ -9,38 +9,6 @@
     gap: 10px;
     padding: 0px 45px 60px 45px;
 }
-.grid-container::before{
-    position: absolute;
-    content: "";
-    background-image: url(/imgs/college-student1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -1;
-    width: 280px;
-    height: 100%;
-    left: -25%;
-    transform: translateY(20%);
-    -webkit-transform: translateY(20%);
-    -moz-transform: translateY(20%);
-    -ms-transform: translateY(20%);
-    -o-transform: translateY(20%);
-}
-.grid-container::after{
-    position: absolute;
-    content: "";
-    background-image: url("/imgs/college-student2.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -1;
-    width: 350px;
-    height: 100%;
-    right: -25%;
-    transform: translateY(20%);
-    -webkit-transform: translateY(20%);
-    -moz-transform: translateY(20%);
-    -ms-transform: translateY(20%);
-    -o-transform: translateY(20%);
-}
 @media (max-width:992px) {
     .grid-container::before{
         display: none;
@@ -51,7 +19,6 @@
 }
 .grid-container>div>span{
     display: inline-block;
-    
     text-align: center;
 }
 .selection-grid-cell{
