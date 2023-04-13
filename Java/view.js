@@ -1,4 +1,3 @@
-/*
 function activateButton() {
     const activeButton = document.getElementById('Active-button');
     const inactiveButton = document.getElementById('inactive-Button');
@@ -26,16 +25,14 @@ function filterSearch(){
         });
       });
 }
-activateButton();
-filterSearch();
-*/
+
 window.onload = function() {
    showStudent(JSON.parse(localStorage.getItem("students")));
 
   };
 function showStudent(students) {
     let tableBody = document.getElementById("table-body");
-    students.forEach((student) => {  
+     students.forEach((student) => {  
         let row = document.createElement("tr");
         let id = document.createElement("td");
         let FullName = document.createElement("td");
