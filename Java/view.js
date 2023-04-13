@@ -1,30 +1,4 @@
-function activation() {
-    const activeButton = document.getElementById("Active-button");
-    const inactiveButton = document.getElementById("inactive-Button");
-  
-    activeButton.addEventListener('click', () => {
-      const studentId = activeButton.closest('tr').querySelector('td:first-child').innerText;
-      const students = JSON.parse(localStorage.getItem('students'));
-      const student = students.find(s => s.id === studentId);
-      student.Status = 'std_active';
-      localStorage.setItem('students', JSON.stringify(students));
-  
-      activeButton.classList.add('active');
-      inactiveButton.classList.remove('active');
-    });
-  
-    inactiveButton.addEventListener('click', () => {
-      const studentId = inactiveButton.closest('tr').querySelector('td:first-child').innerText;
-      const students = JSON.parse(localStorage.getItem('students'));
-      const student = students.find(s => s.id === studentId);
-      student.Status = 'std_inactive';
-      localStorage.setItem('students', JSON.stringify(students));
-  
-      inactiveButton.classList.add('active');
-      activeButton.classList.remove('active');
-    });
-  }
-  
+
 function filterSearch(){
     const searchInput = document.getElementById('search');
     const table = document.getElementById('table');
@@ -80,11 +54,10 @@ function showStudent(students) {
     });
 }
 window.onload = function() {
-    showStudent(JSON.parse(localStorage.getItem("students")));
- 
+    showStudent(JSON.parse(localStorage.getItem("students"))); 
 };
 filterSearch();
-activation();
+
 
 
 
