@@ -215,7 +215,7 @@ footer .logo h1{
     cursor: pointer;
 }
 .btn:first-child {
-    margin-right: 15px;
+    margin-right: 15px ;
 }
 .btn:hover {
     background-color: var(--nav-color);
