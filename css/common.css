@@ -103,7 +103,7 @@ nav>ul>li:hover{
     background-color: #EEE;
     caret-color: var(--footer-color);
 }
-.input-submit{
+.input-submit,button{
     color: var(--footer-color);
     background-color: var(--nav-color);
     cursor: pointer;
