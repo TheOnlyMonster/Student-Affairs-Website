@@ -1,7 +1,7 @@
 let currID = 20230000;
 
 class Student {
-  constructor(Fname, Lname, Nid, Email, Phone, Address, Birthday, Gender, Status, Level, GPA, Img, id) {
+  constructor(Fname, Lname, Nid, Email, Phone, Address, Birthday, Gender, Status, Level, GPA, Img, id,department) {
     this.Fname = Fname;
     this.Lname = Lname;
     this.Nid = Nid;
@@ -15,6 +15,7 @@ class Student {
     this.GPA = GPA;
     this.Img = Img;
     this.id = id;
+    this.department=department;
   }
 }
 
