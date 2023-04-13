@@ -25,11 +25,6 @@ function filterSearch(){
         });
       });
 }
-
-window.onload = function() {
-   showStudent(JSON.parse(localStorage.getItem("students")));
-
-  };
 function showStudent(students) {
     let tableBody = document.getElementById("table-body");
      students.forEach((student) => {  
@@ -65,6 +60,11 @@ function showStudent(students) {
         tableBody.appendChild(row)
     });
 }
+window.onload = function() {
+    showStudent(JSON.parse(localStorage.getItem("students")));
+ 
+};
+filterSearch();
 
 
 
