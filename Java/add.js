@@ -1,5 +1,4 @@
-let currID = 20230000;
-
+let currID = parseInt(localStorage.getItem("currID")) || 20230000;
 class Student {
   constructor(Fname, Lname, Nid, Email, Phone, Address, Birthday, Gender, Status, Level, GPA, Img, id,department) {
     this.Fname = Fname;
@@ -64,6 +63,7 @@ function addStudent(e) {
   localStorage.setItem("students", JSON.stringify(students));
   showMessage("Student Added Successfully!");
   document.getElementById("submitted").reset();
+  localStorage.setItem("currID", currID.toString());
 }
 
 
