@@ -1,30 +1,4 @@
-function activation() {
-    const activeButton = document.getElementById("Active-button");
-    const inactiveButton = document.getElementById("inactive-Button");
-  
-    activeButton.addEventListener('click', () => {
-      const studentId = activeButton.closest('tr').querySelector('td:first-child').innerText;
-      const students = JSON.parse(localStorage.getItem('students'));
-      const student = students.find(s => s.id === studentId);
-      student.Status = 'std_active';
-      localStorage.setItem('students', JSON.stringify(students));
-  
-      activeButton.classList.add('active');
-      inactiveButton.classList.remove('active');
-    });
-  
-    inactiveButton.addEventListener('click', () => {
-      const studentId = inactiveButton.closest('tr').querySelector('td:first-child').innerText;
-      const students = JSON.parse(localStorage.getItem('students'));
-      const student = students.find(s => s.id === studentId);
-      student.Status = 'std_inactive';
-      localStorage.setItem('students', JSON.stringify(students));
-  
-      inactiveButton.classList.add('active');
-      activeButton.classList.remove('active');
-    });
-  }
-  
+
 function filterSearch(){
     const searchInput = document.getElementById('search');
     const table = document.getElementById('table');
@@ -32,8 +6,7 @@ function filterSearch(){
         const searchTerm = searchInput.value.toLowerCase();
         Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
           const name = row.cells[1].textContent.toLowerCase();
-          const id=row.cells[0].textContent;
-          if (name.includes(searchTerm)||id.includes(searchTerm)) {
+          if (name.includes(searchTerm)) {
             row.style.display = '';
           } else {
             row.style.display = 'none';
@@ -43,13 +16,12 @@ function filterSearch(){
 }
 function showStudent(students) {
     let tableBody = document.getElementById("table-body");
-     students.forEach((student) => {  
+    students.forEach((student) => {  
         let row = document.createElement("tr");
         let id = document.createElement("td");
         let FullName = document.createElement("td");
         let GPA = document.createElement("td");
         let department = document.createElement("td");
-        let activity = document.createElement("td");
         let active = document.createElement("button");
         let inactive = document.createElement("button");
     
@@ -58,10 +30,8 @@ function showStudent(students) {
         GPA.innerText = student.GPA;
         department.innerText=student.department
         active.innerText = "Active";
-        inactive.innerText = "Inactive";
-        active.setAttribute("id",'Active-button')
-        inactive.setAttribute("id",'Inactive-button')
         active.classList.add('btn');
+        inactive.innerText = "Inactive";
         inactive.classList.add('btn');
         if (student.Status === "std_active"){
             active.classList.add('active');
@@ -69,22 +39,36 @@ function showStudent(students) {
         else if(student.Status === "std_inactive"){
             inactive.classList.add('active');
         }
-        activity.appendChild(active);
-        activity.appendChild(inactive);
+
+        active.addEventListener('click', () => {
+            active.classList.add('active');
+            inactive.classList.remove('active');
+            student.Status = "std_active";
+            localStorage.setItem("students", JSON.stringify(students));
+        });
+        
+        // add event listener to inactive button
+        inactive.addEventListener('click', () => {
+            inactive.classList.add('active');
+            active.classList.remove('active');
+            student.Status = "std_inactive";
+            localStorage.setItem("students", JSON.stringify(students));
+        });
+        
         row.appendChild(id);
         row.appendChild(FullName);
         row.appendChild(GPA);
         row.appendChild(department);
-        row.appendChild(activity);
+        row.appendChild(active);
+        row.appendChild(inactive);
         tableBody.appendChild(row)
     });
 }
 window.onload = function() {
     showStudent(JSON.parse(localStorage.getItem("students")));
- 
+
 };
 filterSearch();
-activation();
 
 
 
