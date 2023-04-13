@@ -45,15 +45,16 @@ function addStudent(e) {
   let Level = document.getElementById("Level").value;
   let GPA = document.getElementById("GPA").value;
   let Img = document.getElementById("Img").value;
+  let department = "General";
   let id = currID;
   currID++;
 
-  let student = new Student(Fname, Lname, Nid, Email, Phone, Address, Birthday, Gender, Status, Level, GPA, Img, id);
+  let student = new Student(Fname, Lname, Nid, Email, Phone, Address, Birthday, Gender, Status, Level, GPA, Img, id,department);
 
   let students = JSON.parse(localStorage.getItem("students")) || [];
   for (let i = 0; i < students.length; i++) {
       if (students[i].Nid === student.Nid) {
-          showMessage("National Id Already Exists!");
+          showMessage("Student Already Exists!");
           document.getElementById("submitted").reset();
           return;
       }
