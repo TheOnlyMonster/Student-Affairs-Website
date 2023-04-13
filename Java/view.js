@@ -22,9 +22,10 @@ function showStudent(students) {
         let FullName = document.createElement("td");
         let GPA = document.createElement("td");
         let department = document.createElement("td");
+        let activity = document.createElement("td");
         let active = document.createElement("button");
         let inactive = document.createElement("button");
-    
+        
         id.innerText = student.id;
         FullName.innerHTML = `<a href="department.html">${student.Fname} ${student.Lname}</a>`;
         GPA.innerText = student.GPA;
@@ -54,13 +55,14 @@ function showStudent(students) {
             student.Status = "std_inactive";
             localStorage.setItem("students", JSON.stringify(students));
         });
-        
+        activity.appendChild(active);
+        activity.appendChild(inactive);
+
         row.appendChild(id);
         row.appendChild(FullName);
         row.appendChild(GPA);
         row.appendChild(department);
-        row.appendChild(active);
-        row.appendChild(inactive);
+        row.appendChild(activity);
         tableBody.appendChild(row)
     });
 }
