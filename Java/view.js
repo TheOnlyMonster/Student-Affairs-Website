@@ -1,15 +1,30 @@
-function activateButton() {
-    const activeButton = document.getElementById('Active-button');
-    const inactiveButton = document.getElementById('inactive-Button');
+function activation() {
+    const activeButton = document.getElementById("Active-button");
+    const inactiveButton = document.getElementById("inactive-Button");
+  
     activeButton.addEventListener('click', () => {
-        activeButton.classList.add('active');
-        inactiveButton.classList.remove('active');
+      const studentId = activeButton.closest('tr').querySelector('td:first-child').innerText;
+      const students = JSON.parse(localStorage.getItem('students'));
+      const student = students.find(s => s.id === studentId);
+      student.Status = 'std_active';
+      localStorage.setItem('students', JSON.stringify(students));
+  
+      activeButton.classList.add('active');
+      inactiveButton.classList.remove('active');
     });
+  
     inactiveButton.addEventListener('click', () => {
-        inactiveButton.classList.add('active');
-        activeButton.classList.remove('active');
+      const studentId = inactiveButton.closest('tr').querySelector('td:first-child').innerText;
+      const students = JSON.parse(localStorage.getItem('students'));
+      const student = students.find(s => s.id === studentId);
+      student.Status = 'std_inactive';
+      localStorage.setItem('students', JSON.stringify(students));
+  
+      inactiveButton.classList.add('active');
+      activeButton.classList.remove('active');
     });
-}
+  }
+  
 function filterSearch(){
     const searchInput = document.getElementById('search');
     const table = document.getElementById('table');
@@ -17,7 +32,8 @@ function filterSearch(){
         const searchTerm = searchInput.value.toLowerCase();
         Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
           const name = row.cells[1].textContent.toLowerCase();
-          if (name.includes(searchTerm)) {
+          const id=row.cells[0].textContent;
+          if (name.includes(searchTerm)||id.includes(searchTerm)) {
             row.style.display = '';
           } else {
             row.style.display = 'none';
@@ -33,6 +49,7 @@ function showStudent(students) {
         let FullName = document.createElement("td");
         let GPA = document.createElement("td");
         let department = document.createElement("td");
+        let activity = document.createElement("td");
         let active = document.createElement("button");
         let inactive = document.createElement("button");
     
@@ -41,22 +58,24 @@ function showStudent(students) {
         GPA.innerText = student.GPA;
         department.innerText=student.department
         active.innerText = "Active";
-        active.classList.add('btn');
         inactive.innerText = "Inactive";
+        active.setAttribute("id",'Active-button')
+        inactive.setAttribute("id",'Inactive-button')
+        active.classList.add('btn');
         inactive.classList.add('btn');
-        if (student.Status === "Active"){
+        if (student.Status === "std_active"){
             active.classList.add('active');
         }
-        else if(student.Status === "Inactive"){
+        else if(student.Status === "std_inactive"){
             inactive.classList.add('active');
         }
-        
+        activity.appendChild(active);
+        activity.appendChild(inactive);
         row.appendChild(id);
         row.appendChild(FullName);
         row.appendChild(GPA);
         row.appendChild(department);
-        row.appendChild(active);
-        row.appendChild(inactive);
+        row.appendChild(activity);
         tableBody.appendChild(row)
     });
 }
@@ -65,6 +84,7 @@ window.onload = function() {
  
 };
 filterSearch();
+activation();
 
 
 
