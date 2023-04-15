@@ -1,4 +1,6 @@
-let currID = parseInt(localStorage.getItem("currID")) || 20230000;
+let currDate = new Date();
+let newYearID = `${currDate.getFullYear()}0000`;
+let currID = parseInt(localStorage.getItem("currID")) || Number(newYearID);
 let myStyle = document.getElementById("Nid").style.border;
 class Student {
   constructor(
@@ -48,23 +50,25 @@ function showMessage(message) {
 
 function addStudent(e) {
   e.preventDefault();
-  removeLastChild("Nid");
-  removeLastChild("Phone");
-
-  if (!isValidNumber(14, "Nid")) {
+  if (document.getElementById(`input-error`) != null) {
+    document.getElementById(`input-error`).previousElementSibling.style =
+      myStyle;
+    document.getElementById(`input-error`).remove();
+  }
+  if (document.getElementById("Nid").value.length != 14) {
+    showError("Nid", "Please enter 14 digits.");
     return;
   }
-  if (!isValidNumber(11, "Phone")) {
-    return;
-  }
-
   if (document.getElementById("Phone").value.length != 11) {
-    let errorMsg = document.createElement("div");
-    errorMsg.textContent = `Please enter 11 digits`;
-    document.getElementById("Phone").style.border = `4px solid red`;
-    document.getElementById("Phone").after(errorMsg);
+    showError("Phone", "Please enter 11 digits.");
     return;
   }
+  let stdDate = new Date(document.getElementById("Birthday").value);
+  if (currDate.getFullYear() - stdDate.getFullYear() < 17) {
+    showError("Birthday", "Your age must be greater than 17.");
+    return;
+  }
+
   let Fname = document.getElementById("Fname").value;
   let Lname = document.getElementById("Lname").value;
   let Nid = document.getElementById("Nid").value;
@@ -114,6 +118,9 @@ function addStudent(e) {
   localStorage.setItem("currID", currID.toString());
 }
 
+document.getElementById("Fname").onkeydown = validName;
+document.getElementById("Lname").onkeydown = validName;
+
 document.getElementById("submitted").addEventListener("submit", addStudent);
 
 function validName(e) {
@@ -122,26 +129,10 @@ function validName(e) {
   }
 }
 
-document.getElementById("Fname").onkeydown = validName;
-document.getElementById("Lname").onkeydown = validName;
-
-function removeLastChild(ele) {
-  if (document.getElementById(`${ele}`).nextElementSibling != null) {
-    document
-      .getElementById(`${ele}`)
-      .parentElement.removeChild(
-        document.getElementById(`${ele}`).parentElement.lastChild
-      );
-    document.getElementById(`${ele}`).style.border = myStyle;
-  }
-}
-function isValidNumber(value, ele) {
-  if (document.getElementById(`${ele}`).value.length != value) {
-    document.getElementById(`${ele}`).style.border = `4px solid red`;
-    let errorMsg = document.createElement("div");
-    errorMsg.textContent = `Please enter ${value} digits`;
-    document.getElementById(`${ele}`).after(errorMsg);
-    return false;
-  }
-  return true;
+function showError(ele, msg) {
+  document.getElementById(`${ele}`).style.border = `3px solid red`;
+  let errorMsg = document.createElement("div");
+  errorMsg.textContent = msg;
+  errorMsg.id = `input-error`;
+  document.getElementById(`${ele}`).after(errorMsg);
 }
