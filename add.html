@@ -37,7 +37,7 @@
             </div>
             <div>
                 <label for="national_id">National ID:</label><br>
-                <input type="number" id="Nid" required minlength="14" maxlength="14">
+                <input type="number" id="Nid" required>
             </div>
             <div>
                 <label for="std_email">Email:</label><br>
@@ -45,7 +45,7 @@
             </div>
             <div>
                 <label for="phone">Phone:</label><br>
-                <input type="number" id="Phone" required minlength="11" maxlength="11">
+                <input type="number" id="Phone" required>
             </div>
             <div>
                 <label for="address">Address:</label><br>
@@ -63,24 +63,24 @@
                 <span>
                     <label for="level">Level</label><br>
                     <select id="Level" required>
-                        <option value="first_level">1</option>
-                        <option value="second_level">2</option>
-                        <option value="third_level">3</option>
-                        <option value="fourth_level">4</option>
+                        <option value="1">First Level</option>
+                        <option value="2">Second Level</option>
+                        <option value="3">Third Level</option>
+                        <option value="4">Fourth Level</option>
                     </select>
                 </span>
                 <span>
                     <label for="gender">Gender</label><br>
                     <select id="Gender" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </span>
                 <span>
                     <label for="std_status">Status</label><br>
                     <select id="Status" required>
-                        <option value="std_active">Active</option>
-                        <option value="std_inactive">Inactive</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
                     </select>
                 </span>
             </div>
@@ -89,7 +89,6 @@
                 <input type="file" id="Img" required>
             </div>
             <div>
-                <div id="message"></div>
                 <input type="submit" value="Add" class="input-submit">
             </div>
         </form>
