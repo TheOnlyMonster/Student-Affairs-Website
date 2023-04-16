@@ -46,19 +46,18 @@ activeStudents.forEach((element) => {
   tableBody.appendChild(row);
 });
 function filterSearch() {
-    const searchInput = document.getElementById("search");
-    const table = document.getElementsByTagName("table")[0];
-    searchInput.addEventListener("keyup", () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      Array.from(table.querySelectorAll("tbody tr")).forEach((row) => {
-        const name = row.cells[1].textContent.toLowerCase();
-        if (name.includes(searchTerm)) {
-          row.style.display = "";
-        } else {
-          row.style.display = "none";
-        }
-      });
+  const searchInput = document.getElementById("search");
+  const table = document.getElementsByTagName("table")[0];
+  searchInput.addEventListener("keyup", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    Array.from(table.querySelectorAll("tbody tr")).forEach((row) => {
+      const name = row.cells[1].textContent.toLowerCase();
+      if (name.includes(searchTerm)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
     });
-  }
-  filterSearch();
-
+  });
+}
+filterSearch();

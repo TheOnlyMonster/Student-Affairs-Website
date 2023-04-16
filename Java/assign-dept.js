@@ -11,29 +11,27 @@ for (let i = 0; i < students.length; i++) {
     break;
   }
 }
-document.getElementById("id").value = std.id;
-document.getElementById("Phone").value = std.Phone;
-document.getElementById("Address").value = std.Address;
-document.getElementById("Fname").value = std.Fname;
-document.getElementById("Lname").value = std.Lname;
-document.getElementById("Nid").value = std.Nid;
-document.getElementById("Email").value = std.Email;
-document.getElementById("Level").value = std.Level;
-document.getElementById("Gender").value = std.Gender;
-document.getElementById("Status").value = std.Status;
-let currDate = new Date();
-let stdDate = new Date(std.Birthday);
-let stdAge = currDate.getFullYear() - stdDate.getFullYear();
-document.getElementById("Birthday").value = stdAge;
-document.getElementById("GPA").value = std.GPA;
-document.getElementById("department").value = std.department;
+let allProp = Object.keys(std);
+for (let i = 0; i < allProp.length; i++) {
+  if (allProp[i] !== `department` && allProp[i] !== `Img`) {
+    if (allProp[i] == "Birthday") {
+      let currDate = new Date();
+      let stdDate = new Date(std.Birthday);
+      let stdAge = currDate.getFullYear() - stdDate.getFullYear();
+      document.getElementById(allProp[i]).value = stdAge;
+    } else {
+      document.getElementById(allProp[i]).value = std[allProp[i]];
+    }
+  }
+}
 if (std.Status === "Active" && std.Level >= 3) {
   myForm.onsubmit = function (e) {
     e.preventDefault();
     let stdDept = document.querySelector("select").value;
     if (std.department != stdDept) {
       Swal.fire({
-        title: `Do you want to change department for student ${std.id} from ${std.department} to ${stdDept}?`,
+        title: `Do you want to save changes?`,
+        text: `Change department from ${std.department} to ${stdDept}?`,
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: "Save",

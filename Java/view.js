@@ -40,18 +40,36 @@ function showStudent(students) {
     }
 
     active.addEventListener("click", () => {
-      active.classList.add("active");
-      inactive.classList.remove("active");
-      student.Status = "Active";
-      localStorage.setItem("students", JSON.stringify(students));
+      if (!active.className.includes("active")) {
+        active.classList.add("active");
+        inactive.classList.remove("active");
+        student.Status = "Active";
+        localStorage.setItem("students", JSON.stringify(students));
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Changed student status from Inactive to Active",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
     });
 
     // add event listener to inactive button
     inactive.addEventListener("click", () => {
-      inactive.classList.add("active");
-      active.classList.remove("active");
-      student.Status = "Inactive";
-      localStorage.setItem("students", JSON.stringify(students));
+      if (!inactive.className.includes("active")) {
+        inactive.classList.add("active");
+        active.classList.remove("active");
+        student.Status = "Inactive";
+        localStorage.setItem("students", JSON.stringify(students));
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Changed student status from Active to Inactive",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
     });
     activity.appendChild(active);
     activity.appendChild(inactive);

@@ -68,7 +68,6 @@ function addStudent(e) {
     showError("Birthday", "Your age must be greater than 17.");
     return;
   }
-
   let Fname = document.getElementById("Fname").value;
   let Lname = document.getElementById("Lname").value;
   let Nid = document.getElementById("Nid").value;

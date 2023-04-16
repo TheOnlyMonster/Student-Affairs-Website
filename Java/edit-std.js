@@ -12,22 +12,15 @@ for (let i = 0; i < students.length; i++) {
     break;
   }
 }
-document.getElementById("Phone").value = std.Phone;
-document.getElementById("Address").value = std.Address;
-document.getElementById("Fname").value = std.Fname;
-document.getElementById("Lname").value = std.Lname;
-document.getElementById("Nid").value = std.Nid;
-document.getElementById("Email").value = std.Email;
-document.getElementById("Level").value = std.Level;
-document.getElementById("Gender").value = std.Gender;
-document.getElementById("Status").value = std.Status;
-document.getElementById("Birthday").value = std.Birthday;
-document.getElementById("GPA").value = std.GPA;
-document.getElementById("department").value = std.department;
+let allProp = Object.keys(std);
 
+for (let i = 0; i < allProp.length; i++) {
+  if (allProp[i] !== `Img` && allProp[i] !== `id`) {
+    document.getElementById(allProp[i]).value = std[allProp[i]];
+  }
+}
 document.getElementById("Fname").onkeydown = validName;
 document.getElementById("Lname").onkeydown = validName;
-
 document.getElementById("delete").addEventListener("click", deleteStd);
 
 function deleteStd(e) {
@@ -71,7 +64,6 @@ document.getElementById("change").onclick = function (e) {
     showError("Birthday", "Your age must be greater than 17.");
     return;
   }
-
   for (let i = 0; i < students.length; i++) {
     if (
       students[i].Nid === document.getElementById("Nid").value &&
@@ -81,31 +73,49 @@ document.getElementById("change").onclick = function (e) {
       return;
     }
   }
-  Swal.fire({
-    title: "Do you want to save the changes?",
-    showDenyButton: true,
-    showCancelButton: true,
-    confirmButtonText: "Save",
-    denyButtonText: `Don't save`,
-  }).then((result) => {
-    if (result.isConfirmed) {
-      std.Fname = document.getElementById("Fname").value;
-      std.Lname = document.getElementById("Lname").value;
-      std.Nid = document.getElementById("Nid").value;
-      std.Email = document.getElementById("Email").value;
-      std.Phone = document.getElementById("Phone").value;
-      std.Address = document.getElementById("Address").value;
-      std.Birthday = document.getElementById("Birthday").value;
-      std.Gender = document.getElementById("Gender").value;
-      std.Status = document.getElementById("Status").value;
-      std.Level = document.getElementById("Level").value;
-      std.GPA = document.getElementById("GPA").value;
-      localStorage.setItem("students", JSON.stringify(students));
-      Swal.fire("Saved!", "", "success");
-    } else if (result.isDenied) {
-      Swal.fire("Changes are not saved", "", "info");
+  let listOfChanges = [];
+  for (let i = 0; i < allProp.length; i++) {
+    if (
+      allProp[i] !== `department` &&
+      allProp[i] !== `Img` &&
+      allProp[i] !== `id`
+    ) {
+      if (document.getElementById(`${allProp[i]}`).value != std[allProp[i]]) {
+        listOfChanges.push(
+          `Change ${allProp[i]} from ${std[allProp[i]]} to ${
+            document.getElementById(`${allProp[i]}`).value
+          }? <br>`
+        );
+      }
     }
-  });
+  }
+  if (listOfChanges.length != 0) {
+    listOfChanges = listOfChanges.join("");
+    Swal.fire({
+      title: `Do you want to save the changes?`,
+      html: `${listOfChanges}`,
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        for (let i = 0; i < allProp.length; i++) {
+          if (
+            allProp[i] !== `department` &&
+            allProp[i] !== `Img` &&
+            allProp[i] !== `id`
+          ) {
+            std[allProp[i]] = document.getElementById(allProp[i]).value;
+          }
+        }
+        localStorage.setItem("students", JSON.stringify(students));
+        Swal.fire("Saved!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
+  }
 };
 
 function validName(e) {
