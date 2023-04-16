@@ -1,25 +1,41 @@
-.student-details{
-    margin: 10vh auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    padding: 30px;
+.student-details {
+  margin: 10vh auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 30px;
 }
-.student-details .grid-cell{
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-    justify-content: space-evenly;
+.student-details .grid-cell {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  justify-content: space-evenly;
 }
-.student-details .student-img{
-    max-width: 100%;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
+.student-details .student-img {
+  max-width: 100%;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
-.student-details input[type="submit"]{
-    max-width: min-content;
-    align-self: center;
-    margin: 10px;
+.student-details button {
+  max-width: max-content;
+  align-self: center;
+  margin: 10px;
+  border-radius: 12px;
+  padding: 5px 10px;
+  transition: 0.3;
+  -webkit-transition: 0.3;
+  -moz-transition: 0.3;
+  -ms-transition: 0.3;
+  -o-transition: 0.3;
+}
+.student-details button:hover {
+  background-color: red;
+  color: white;
+}
+.student-details input[type="submit"] {
+  max-width: min-content;
+  align-self: center;
+  margin: 10px;
 }
