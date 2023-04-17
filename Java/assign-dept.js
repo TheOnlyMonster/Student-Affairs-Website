@@ -11,9 +11,14 @@ for (let i = 0; i < students.length; i++) {
     break;
   }
 }
+if (std.Gender === "Male") {
+  document.querySelector("img").setAttribute("src", "imgs/male-student.png");
+} else {
+  document.querySelector("img").setAttribute("src", "imgs/female-student.png");
+}
 let allProp = Object.keys(std);
 for (let i = 0; i < allProp.length; i++) {
-  if (allProp[i] !== `department` && allProp[i] !== `Img`) {
+  if (allProp[i] !== `department`) {
     if (allProp[i] == "Birthday") {
       let currDate = new Date();
       let stdDate = new Date(std.Birthday);

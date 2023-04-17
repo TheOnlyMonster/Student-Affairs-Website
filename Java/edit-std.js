@@ -12,10 +12,16 @@ for (let i = 0; i < students.length; i++) {
     break;
   }
 }
+
+if (std.Gender === "Male") {
+  document.querySelector("img").setAttribute("src", "imgs/male-student.png");
+} else {
+  document.querySelector("img").setAttribute("src", "imgs/female-student.png");
+}
 let allProp = Object.keys(std);
 
 for (let i = 0; i < allProp.length; i++) {
-  if (allProp[i] !== `Img` && allProp[i] !== `id`) {
+  if (allProp[i] !== `id`) {
     document.getElementById(allProp[i]).value = std[allProp[i]];
   }
 }
@@ -75,11 +81,7 @@ document.getElementById("change").onclick = function (e) {
   }
   let listOfChanges = [];
   for (let i = 0; i < allProp.length; i++) {
-    if (
-      allProp[i] !== `department` &&
-      allProp[i] !== `Img` &&
-      allProp[i] !== `id`
-    ) {
+    if (allProp[i] !== `department` && allProp[i] !== `id`) {
       if (document.getElementById(`${allProp[i]}`).value != std[allProp[i]]) {
         listOfChanges.push(
           `Change ${allProp[i]} from ${std[allProp[i]]} to ${
@@ -101,16 +103,14 @@ document.getElementById("change").onclick = function (e) {
     }).then((result) => {
       if (result.isConfirmed) {
         for (let i = 0; i < allProp.length; i++) {
-          if (
-            allProp[i] !== `department` &&
-            allProp[i] !== `Img` &&
-            allProp[i] !== `id`
-          ) {
+          if (allProp[i] !== `department` && allProp[i] !== `id`) {
             std[allProp[i]] = document.getElementById(allProp[i]).value;
           }
         }
         localStorage.setItem("students", JSON.stringify(students));
         Swal.fire("Saved!", "", "success");
+        setTimeout(()=>location.reload(),3000)
+        
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
       }

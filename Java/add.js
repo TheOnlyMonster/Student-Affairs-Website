@@ -15,7 +15,6 @@ class Student {
     Status,
     Level,
     GPA,
-    Img,
     id,
     department
   ) {
@@ -30,7 +29,6 @@ class Student {
     this.Status = Status;
     this.Level = Level;
     this.GPA = GPA;
-    this.Img = Img;
     this.id = id;
     this.department = department;
   }
@@ -79,7 +77,6 @@ function addStudent(e) {
   let Status = document.getElementById("Status").value;
   let Level = document.getElementById("Level").value;
   let GPA = document.getElementById("GPA").value;
-  let Img = document.getElementById("Img").value;
   let department = "General";
   let id = currID;
   currID++;
@@ -96,7 +93,6 @@ function addStudent(e) {
     Status,
     Level,
     GPA,
-    Img,
     id,
     department
   );
