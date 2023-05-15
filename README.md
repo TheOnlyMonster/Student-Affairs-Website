@@ -1,20 +1,74 @@
-# Student-Affairs
-This student management system is designed to help educational institutions keep track of their students' information. The system offers a variety of features that allow users to manage student data in an efficient and organized way.
+# Student Management System
 
-One of the main features of this system is the ability to add a new student to the database. Users can enter the student's ID, name, date of birth, GPA, gender, level, status, department, email, and mobile number. This information is then stored in the local storage for easy retrieval.
+The Student Management System is a web-based application designed to assist educational institutions in efficiently managing student information. This system offers a range of features that enable users to maintain organized and up-to-date student records.
 
-Another important feature is the ability to update existing student information. Users can edit all fields except for the department field, which is disabled. This ensures that the student's department remains consistent throughout the system.
+## Features
 
-The system also allows users to delete student data through a delete button in the edit student data page. A confirmation dialogue is displayed before deletion occurs, preventing accidental deletion of important data.
+### Add New Student
+- Users can add a new student to the system by providing essential information such as ID, name, date of birth, GPA, gender, level, status, department, email, and mobile number.
+- The student's data is securely stored in the local storage for easy retrieval and management.
 
-Users can search for active students by name on the search for students screen. The system will render a table of students with similar names having active status. This feature helps users quickly find specific student information.
+### Update Student Information
+- Users have the ability to edit existing student records, modifying fields such as name, date of birth, GPA, gender, level, status, email, and mobile number.
+- The department field is disabled for editing to ensure consistency in the student's department throughout the system.
 
-Users can assign a department to a student through the student’s department assignment page. The page includes the student's ID, name, and a dropdown list of available departments. This feature is only applicable for students with a level of 3. If the user attempts to assign a department to a student with a different level, an error message will be displayed.
+### Delete Student Data
+- The system allows users to delete student data from the database.
+- A confirmation dialogue is displayed to prevent accidental deletion of important information.
 
-The system also offers a table of all active and inactive students with a related set of attributes only. This table makes it easy for users to view all students' information in one place.
+### Search for Students
+- Users can search for active students by name using the search feature.
+- The system displays a table of students with similar names and active status, allowing for quick access to specific student information.
 
-Users can change a student's status from active to inactive or vice versa from the table viewing all students. This feature allows users to quickly update a student's status without having to edit their entire profile.
+### Assign Department to Student
+- Users can assign a department to a student through the student's department assignment page.
+- The page provides the student's ID, name, and a dropdown list of available departments.
+- This feature is only applicable to students with a level of 3. If the user attempts to assign a department to a student with a different level, an error message will be displayed.
 
-Finally, the system has a well-designed navigation bar that allows users to move through all pages and a home page. This navigation bar makes it easy for users to access all features of the system quickly.
+### View All Students
+- The system provides a comprehensive table displaying all active and inactive students.
+- Only relevant attributes are shown, allowing users to easily view all students' information in one place.
 
-Overall, this student management system provides a comprehensive solution for managing student information. Its many features make it easy for educational institutions to keep track of their students' information in an efficient and organized way.
+### Change Student Status
+- Users can update a student's status from active to inactive or vice versa directly from the table view of all students.
+- This feature enables quick updates to a student's status without requiring the editing of their complete profile.
+
+### Navigation Bar
+- The system features a well-designed navigation bar that facilitates easy navigation between pages.
+- Users can access all system features quickly and efficiently through the navigation bar.
+
+## Installation
+
+To install and run the Student Management System, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Make sure you have a compatible web server and database management system set up.
+3. Import the provided database schema into your database management system.
+4. Configure the necessary connection settings in the system's configuration files.
+5. Deploy the application to your web server.
+6. Access the application through a web browser.
+
+## Usage
+
+Once the Student Management System is installed and running, you can begin managing student information by performing the following actions:
+
+- Add new students to the system by providing their details.
+- Update existing student information as needed.
+- Delete student records if necessary.
+- Search for specific students by name.
+- Assign departments to students of the appropriate level.
+- View all active and inactive students in a comprehensive table.
+- Change a student's status from active to inactive or vice versa.
+- Navigate through the system using the provided navigation bar.
+
+## Contributing
+
+Contributions to the Student Management System are welcome! If you would like to contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and test them thoroughly.
+4. Commit your changes and push them to your fork.
+5. Submit a pull request, explaining the changes you have made.
+
+Please ensure that your contributions align with the project's coding standards and guidelines.
