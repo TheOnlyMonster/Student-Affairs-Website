@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for s in students %}
+ <h1>{{s.FirstName}}</h1>
+{% endfor%}
+
+{% endblock content %}

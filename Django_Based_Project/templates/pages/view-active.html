@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+ 
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/view-active.css' %}">
+<script src="{% static 'Java/view-active.js' %}"></script>
+{% endblock headers %}
+
+{% block content %}
+<form action="#" method="get" class="container search-container">
+    <input type="text" id="search" name="search" placeholder="Search for a student" id="search">
+</form>
+<table class="container table-container" id="table">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>GPA</th>
+        <th>Department</th>
+        <th>Modify Student</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+{% endblock content %}

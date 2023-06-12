@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %}
+ <link rel="stylesheet" href="{% static 'css/home.css' %}">
+ <link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock headers %}
+
+{% block content %}
+<h2 class="container add-container">News Center</h2>
+        <div class="img-container">
+            <div class="img-wrapper img-container-row-2 img-container-col-2">
+                <img src="{% static 'imgs/home1.jpg' %}" alt="news" >
+                <div class="img-content"> Programming Courses are now available, for further information contact us. </div>
+            </div>
+            <div class="img-wrapper">
+                <img src="{% static 'imgs/home2.jpg' %}" alt="news">
+                <div class="img-content"> Maintainance in the fourth Hall. </div>
+            </div>
+            <div class="img-wrapper">
+                <img src="{% static 'imgs/home3.jpg' %}" alt="news">
+                <div class="img-content"> Internships in Rome, for further information contact us. </div>
+            </div>
+            <div class="img-wrapper">
+                <img src="{% static 'imgs/home4.jpg' %}" alt="news">
+                <div class="img-content"> Excitations upon Graduation Concert.</div>
+            </div>
+            <div class="img-wrapper">
+                <img src="{% static 'imgs/home5.jpg' %}" alt="news">
+                <div class="img-content"> Get ready for the ultimate Party at the 4th of july. </div>
+            </div>
+        </div>
+        <hr class="container">
+        <div class="container add-container">
+            <h2>Welcome to X Universirty, Universirty of the Future.</h2>
+            <p>Founded in 1963, X University is one of the most established Universities in the World. The university aims for a perfect educational enviroment and a clean learning experience.</p>
+        </div>
+        <div class="contact-us">
+            <img src="{% static 'imgs/home6.jpg' %}" alt="contact us">
+            <div class="text-block"> <h2>Contact Us</h2>
+                <img src="{% static 'imgs/call-home.png' %}">
+                <h2>Phone: 555-1234</h2>
+            </div>
+        </div>
+{% endblock content %}
+        

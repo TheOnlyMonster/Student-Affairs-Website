@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+ 
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/std-details.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js" integrity="sha256-t0FDfwj/WoMHIBbmFfuOtZv1wtA977QCfsFR3p1K4No=" crossorigin="anonymous"></script>
+{% endblock headers %}
+
+{% block content %}
+<form class="student-details container">
+    <div>
+        <img alt="Image for the student" class="student-img">
+    </div>
+    <div>
+        <div class="grid-cell">
+            <label for="Fname">First Name</label>
+            <input type="text" id="Fname" required>
+        </div>
+        <div class="grid-cell">
+            <label for="Lname">Last Name</label>
+            <input type="text" id="Lname" required>
+        </div>
+        <div class="grid-cell">
+            <label for="Nid">National ID</label>
+            <input type="number" id="Nid" required minlength="14" maxlength="14">
+        </div>
+        <div class="grid-cell">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" required>
+        </div> 
+        <div class="grid-cell">
+            <label for="Phone">Phone</label>
+            <input type="number" id="Phone" required minlength="11" maxlength="11">
+        </div>
+    </div>
+    <div class="grid-cell">
+        <label for="Address">Address</label>
+        <input type="text" id="Address" required>
+    </div>
+    <div class="grid-cell">
+        <label for="Birthday">Birthday</label>
+        <input type="date" id="Birthday" required>
+    </div>
+    <div class="grid-cell">
+        <label for="GPA">GPA</label>
+        <input type="number" id="GPA" required step="0.01" min="0" max="4">
+    </div>
+    <div class="grid-cell">
+        <label for="Level">Level</label>
+        <select id="Level" required>
+            <option value="First Level">First Level</option>
+            <option value="Second Level">Second Level</option>
+            <option value="Third Level">Third Level</option>
+            <option value="Fourth Level">Fourth Level</option>
+        </select>
+    </div>
+    <div class="grid-cell">
+        <label for="Gender">Gender</label>
+        <select id="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="grid-cell">
+        <label for="Status">Status</label>
+        <select id="Status" required>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+    </div>
+    <div class="grid-cell">
+        <label for="department">Department</label>
+        <input type="text" id="department" disabled>
+        <button id="delete">Delete Student</button>
+        <input id="change" type="submit" value="Save Changes" class="input-submit" >
+    </div>
+</form>
+<script src="{% static 'Java/edit-std.js' %}"></script>
+{% endblock content %}
